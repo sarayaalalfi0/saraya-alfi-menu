@@ -1,301 +1,305 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مطعم مشويات سرايا الألفي - تبوك</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Cairo', sans-serif; scroll-behavior: smooth; }
-        .tab-content { display: none; }
-        .tab-content.active { display: block; }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مطعم مشويات سرايا الألفي - تبوك</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Cairo', sans-serif; scroll-behavior: smooth; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+    </style>
 </head>
 <body class="bg-[#0e0c0a] text-[#f3f4f6] antialiased">
-    <header class="relative h-[60vh] flex items-center justify-center bg-cover bg-center" style="background-image: linear-gradient(rgba(14, 12, 10, 0.85), rgba(14, 12, 10, 0.95)), url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1200&auto=format&fit=crop');">
-        <div class="text-center px-4 max-w-3xl z-10">
-            <div class="inline-block p-2 bg-white/5 rounded-full backdrop-blur-sm mb-6 border border-amber-500/20">
-                <span class="text-amber-500 font-bold text-xl px-4 py-2 block">🔥 سرايا الألفي</span>
-            </div>
-            <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
-                أصل المشويات والأكلات <span class="text-amber-500">المصرية</span> في تبوك
-            </h1>
-            <p class="text-gray-400 text-lg mb-8">اختر وجبتك المفضلة، احسب حسابك الإجمالي، واطلب مباشرة عبر الواتساب الفوري.</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#menu-section" class="bg-amber-500 hover:bg-amber-600 text-black font-bold px-8 py-4 rounded-xl transition duration-300 shadow-lg shadow-amber-500/20 text-center">
-                    ابدأ الطلب وحساب الفاتورة
-                </a>
-            </div>
-        </div>
-    </header>
-    <main id="menu-section" class="py-12 px-4 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-            
-            <div class="lg:col-span-2 space-y-6">
-                
-                <div class="flex gap-2 overflow-x-auto pb-3 sticky top-0 bg-[#0e0c0a] z-20 py-2 mask-linear">
-                    <button onclick="switchTab('mashwiyat')" id="btn-mashwiyat" class="tab-btn bg-amber-500 text-black font-bold px-4 py-2 rounded-xl whitespace-nowrap text-sm transition">المشويات</button>
-                    <button onclick="switchTab('mshakal-am')" id="btn-mshakal-am" class="tab-btn bg-[#141210] border border-white/5 hover:border-amber-500/30 text-gray-400 font-semibold px-4 py-2 rounded-xl whitespace-nowrap text-sm transition">مشكل عام</button>
-                    <button onclick="switchTab('mshakal-lahm')" id="btn-mshakal-lahm" class="tab-btn bg-[#141210] border border-white/5 hover:border-amber-500/30 text-gray-400 font-semibold px-4 py-2 rounded-xl whitespace-nowrap text-sm transition">مشكل لحوم</button>
-                    <button onclick="switchTab('mshakal-dajaj')" id="btn-mshakal-dajaj" class="tab-btn bg-[#141210] border border-white/5 hover:border-amber-500/30 text-gray-400 font-semibold px-4 py-2 rounded-xl whitespace-nowrap text-sm transition">مشكل دجاج</button>
-                    <button onclick="switchTab('atbaq-janebiya')" id="btn-atbaq-janebiya" class="tab-btn bg-[#141210] border border-white/5 hover:border-amber-500/30 text-gray-400 font-semibold px-4 py-2 rounded-xl whitespace-nowrap text-sm transition">أطباق جانبية</button>
-                    <button onclick="switchTab('tawajen')" id="btn-tawajen" class="tab-btn bg-[#141210] border border-white/5 hover:border-amber-500/30 text-gray-400 font-semibold px-4 py-2 rounded-xl whitespace-nowrap text-sm transition">الطواجن</button>
-                    <button onclick="switchTab('shorba')" id="btn-shorba" class="tab-btn bg-[#141210] border border-white/5 hover:border-amber-500/30 text-gray-400 font-semibold px-4 py-2 rounded-xl whitespace-nowrap text-sm transition">شوربة وإيدامات</button>
-                    <button onclick="switchTab('sandwiches')" id="btn-sandwiches" class="tab-btn bg-[#141210] border border-white/5 hover:border-amber-500/30 text-gray-400 font-semibold px-4 py-2 rounded-xl whitespace-nowrap text-sm transition">الساندوتشات</button>
-                    <button onclick="switchTab('aroz-makaronat')" id="btn-aroz-makaronat" class="tab-btn bg-[#141210] border border-white/5 hover:border-amber-500/30 text-gray-400 font-semibold px-4 py-2 rounded-xl whitespace-nowrap text-sm transition">أرز ومكرونات</button>
-                    <button onclick="switchTab('moqabilat')" id="btn-moqabilat" class="tab-btn bg-[#141210] border border-white/5 hover:border-amber-500/30 text-gray-400 font-semibold px-4 py-2 rounded-xl whitespace-nowrap text-sm transition">المقبلات</button>
-                    <button onclick="switchTab('yom-joma')" id="btn-yom-joma" class="tab-btn bg-[#141210] border border-white/5 hover:border-amber-500/30 text-gray-400 font-semibold px-4 py-2 rounded-xl whitespace-nowrap text-sm transition">يوم الجمعة</button>
-                    <button onclick="switchTab('asayer')" id="btn-asayer" class="tab-btn bg-[#141210] border border-white/5 hover:border-amber-500/30 text-gray-400 font-semibold px-4 py-2 rounded-xl whitespace-nowrap text-sm transition">العصائر</button>
-                    <button onclick="switchTab('halawat')" id="btn-halawat" class="tab-btn bg-[#141210] border border-white/5 hover:border-amber-500/30 text-gray-400 font-semibold px-4 py-2 rounded-xl whitespace-nowrap text-sm transition">الحلا</button>
-                </div>
-                <!-- الأقسام -->
-                <div id="tab-mashwiyat" class="tab-content active space-y-3">
-                    <h3 class="text-xl font-bold text-amber-500 mb-4 flex items-center gap-2">🍢 المشويات على الفحم</h3>
-                    <div id="items-mashwiyat" class="space-y-3"></div>
-                </div>
-                <div id="tab-mshakal-am" class="tab-content space-y-3">
-                    <h3 class="text-xl font-bold text-amber-500 mb-4">🍽️ مشكل عام</h3>
-                    <div id="items-mshakal-am" class="space-y-3"></div>
-                </div>
-                <div id="tab-mshakal-lahm" class="tab-content space-y-3">
-                    <h3 class="text-xl font-bold text-amber-500 mb-4">🥩 مشكل لحوم</h3>
-                    <div id="items-mshakal-lahm" class="space-y-3"></div>
-                </div>
-                <div id="tab-mshakal-dajaj" class="tab-content space-y-3">
-                    <h3 class="text-xl font-bold text-amber-500 mb-4">🍗 مشكل دجاج</h3>
-                    <div id="items-mshakal-dajaj" class="space-y-3"></div>
-                </div>
-                <div id="tab-atbaq-janebiya" class="tab-content space-y-3">
-                    <h3 class="text-xl font-bold text-amber-500 mb-4">🥘 أطباق جانبية</h3>
-                    <div id="items-atbaq-janebiya" class="space-y-3"></div>
-                </div>
-                <div id="tab-tawajen" class="tab-content space-y-3">
-                    <h3 class="text-xl font-bold text-amber-500 mb-4">🏺 الطواجن</h3>
-                    <div id="items-tawajen" class="space-y-3"></div>
-                </div>
-                <div id="tab-shorba" class="tab-content space-y-3">
-                    <h3 class="text-xl font-bold text-amber-500 mb-4">🥣 شوربة وإيدامات</h3>
-                    <div id="items-shorba" class="space-y-3"></div>
-                </div>
-                <div id="tab-sandwiches" class="tab-content space-y-3">
-                    <h3 class="text-xl font-bold text-amber-500 mb-4">🥪 الساندوتشات</h3>
-                    <div id="items-sandwiches" class="space-y-3"></div>
-                </div>
-                <div id="tab-aroz-makaronat" class="tab-content space-y-3">
-                    <h3 class="text-xl font-bold text-amber-500 mb-4">🍚 أرز ومكرونات</h3>
-                    <div id="items-aroz-makaronat" class="space-y-3"></div>
-                </div>
-                <div id="tab-moqabilat" class="tab-content space-y-3">
-                    <h3 class="text-xl font-bold text-amber-500 mb-4">🥗 المقبلات</h3>
-                    <div id="items-moqabilat" class="space-y-3"></div>
-                </div>
-                <div id="tab-yom-joma" class="tab-content space-y-3">
-                    <h3 class="text-xl font-bold text-amber-500 mb-4">📅 يوم الجمعة فقط</h3>
-                    <div id="items-yom-joma" class="space-y-3"></div>
-                </div>
-                <div id="tab-asayer" class="tab-content space-y-3">
-                    <h3 class="text-xl font-bold text-amber-500 mb-4">🥤 العصائر</h3>
-                    <div id="items-asayer" class="space-y-3"></div>
-                </div>
-                <div id="tab-halawat" class="tab-content space-y-3">
-                    <h3 class="text-xl font-bold text-amber-500 mb-4">🍮 الحلا</h3>
-                    <div id="items-halawat" class="space-y-3"></div>
-                </div>
-            </div>
-            <!-- السلة الجانبية -->
-            <div class="bg-gradient-to-b from-[#1a1714] to-[#141210] p-6 rounded-3xl border border-amber-500/20 sticky top-20 shadow-2xl z-10">
-                <h3 class="text-xl font-bold text-white mb-4 pb-3 border-b border-white/5 flex items-center justify-between">
-                    <span>🛒 تفاصيل طلبك الحالي</span>
-                    <span id="items-count" class="bg-amber-500/10 text-amber-500 text-xs px-2.5 py-1 rounded-full border border-amber-500/20">0 أصناف</span>
-                </h3>
-                
-                <div id="cart-summary" class="max-h-[300px] overflow-y-auto text-gray-400 text-sm space-y-3 mb-6 pr-1">
-                    <p class="text-center py-8 text-gray-500">اختر من القائمة لبدء حساب طلبك</p>
-                </div>
-                <div class="pt-4 border-t border-white/5 mb-6 flex justify-between items-center">
-                    <span class="text-gray-400 font-semibold">الحساب الإجمالي:</span>
-                    <span id="total-price" class="text-2xl font-extrabold text-amber-500">0 ريال</span>
-                </div>
-                <!-- تم استبدال زر الواتساب القديم فقط بهذا الزر الجديد -->
-                <a href="https://sarayaalalfi0.github.io/Saraya-Al-Alfi/" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 rounded-xl transition duration-300 flex items-center justify-center gap-2 text-md shadow-lg shadow-emerald-600/20">
-                    🚚 اطلب توصيل من المطعم ➡️
-                </a>
-            </div>
-        </div>
-    </main>
-    <footer class="py-10 bg-[#0a0807] text-center text-gray-500 text-sm border-t border-white/5 mt-16">
-        <p class="mb-2 font-semibold text-gray-400">مطعم مشويات وأكلات مصرية سرايا الألفي - تبوك</p>
-        <p class="mb-4 text-xs">رقم الطلبات المباشر: 0567441919</p>
-        <p>&copy; 2026 جميع الحقوق محفوظة لـ سرايا الألفي.</p>
-    </footer>
-    <script>
-        const fullMenu = {
-            "m1": { name: "ربع كباب لحم", price: 32, cat: "mashwiyat" },
-            "m2": { name: "ربع طرب", price: 34, cat: "mashwiyat" },
-            "m3": { name: "ربع أوصال لحم", price: 38, cat: "mashwiyat" },
-            "m4": { name: "ربع ريش ضاني", price: 60, cat: "mashwiyat" },
-            "m5": { name: "كبده ضاني", price: 28, cat: "mashwiyat" },
-            "m6": { name: "سمان", price: 25, cat: "mashwiyat" },
-            "m7": { name: "شيش طاووق", price: 26, cat: "mashwiyat" },
-            "m8": { name: "ربع أوصال دجاج", price: 26, cat: "mashwiyat" },
-            "m9": { name: "كباب دجاج", price: 26, cat: "mashwiyat" },
-            "m10": { name: "دجاج على الفحم", price: 28, cat: "mashwiyat" },
-            "m11": { name: "نص دجاجة على الفحم", price: 14, cat: "mashwiyat" },
-            "m12": { name: "ربع كيلو سجق مشوي", price: 31, cat: "mashwiyat" },
-            "g1": { name: "مشكل عادي", price: 29, cat: "mshakal-am" },
-            "g2": { name: "مشكل خاص", price: 48, cat: "mshakal-am" },
-            "g3": { name: "مشكل وسط", price: 94, cat: "mshakal-am" },
-            "g4": { name: "كيلو مشكل", price: 131, cat: "mshakal-am" },
-            "g5": { name: "مشكل كبير", price: 157, cat: "mshakal-am" },
-            "g6": { name: "مشكل ملكي", price: 158, cat: "mshakal-am" },
-            "g7": { name: "مشكل عائلي", price: 230, cat: "mshakal-am" },
-            "l1": { name: "مشكل عادي", price: 35, cat: "mshakal-lahm" },
-            "l2": { name: "مشكل خاص", price: 52, cat: "mshakal-lahm" },
-            "l3": { name: "مشكل وسط", price: 111, cat: "mshakal-lahm" },
-            "l4": { name: "كيلو مشكل", price: 144, cat: "mshakal-lahm" },
-            "l5": { name: "مشكل كبير", price: 168, cat: "mshakal-lahm" },
-            "l6": { name: "مشكل ملكي", price: 168, cat: "mshakal-lahm" },
-            "l7": { name: "مشكل عائلي", price: 260, cat: "mshakal-lahm" },
-            "d1": { name: "مشكل عادي", price: 26, cat: "mshakal-dajaj" },
-            "d2": { name: "مشكل خاص", price: 39, cat: "mshakal-dajaj" },
-            "d3": { name: "مشكل وسط", price: 78, cat: "mshakal-dajaj" },
-            "d4": { name: "كيلو مشكل", price: 104, cat: "mshakal-dajaj" },
-            "d5": { name: "مشكل كبير", price: 130, cat: "mshakal-dajaj" },
-            "d6": { name: "مشكل ملكي", price: 132, cat: "mshakal-dajaj" },
-            "d7": { name: "مشكل عائلي", price: 201, cat: "mshakal-dajaj" },
-            "j1": { name: "حبة حمام محشى", price: 41, cat: "atbaq-janebiya" },
-            "j2": { name: "ربع بط", price: 29, cat: "atbaq-janebiya" },
-            "j3": { name: "موزة (فتة)", price: 50, cat: "atbaq-janebiya" },
-            "j4": { name: "ورقة لحمة", price: 31, cat: "atbaq-janebiya" },
-            "j5": { name: "سجق اسكندراني", price: 31, cat: "atbaq-janebiya" },
-            "j6": { name: "كبدة اسكندراني", price: 28, cat: "atbaq-janebiya" },
-            "j7": { name: "محشي مشكل", price: 28, cat: "atbaq-janebiya" },
-            "j8": { name: "محشي مشكل صغير", price: 14, cat: "atbaq-janebiya" },
-            "t1": { name: "طاجن خضار باللحم (ضانى)", price: 29, cat: "tawajen" },
-            "t2": { name: "طاجن باميه باللحم (ضانى)", price: 29, cat: "tawajen" },
-            "t3": { name: "طاجن بطاطس بالدجاج", price: 26, cat: "tawajen" },
-            "t4": { name: "طاجن بطاطس باللحم", price: 29, cat: "tawajen" },
-            "t5": { name: "طاجن بصل باللحم", price: 31, cat: "tawajen" },
-            "t6": { name: "طاجن باميه باللحم (بتلو)", price: 31, cat: "tawajen" },
-            "t7": { name: "طاجن خضار باللحم (بتلو)", price: 31, cat: "tawajen" },
-            "t8": { name: "طاجن عكاوي", price: 37, cat: "tawajen" },
-            "t9": { name: "طاجن مسقعه باللحم", price: 14, cat: "tawajen" },
-            "s1": { name: "شوربة لسان عصفور", price: 8, cat: "shorba" },
-            "s2": { name: "شوربة حمام", price: 8, cat: "shorba" },
-            "s3": { name: "شوربة كريمة دجاج", price: 12, cat: "shorba" },
-            "s4": { name: "ملوخية", price: 9, cat: "shorba" },
-            "s5": { name: "بامية", price: 8, cat: "shorba" },
-            "s6": { name: "مسقعة", price: 9, cat: "shorba" },
-            "s7": { name: "خضار مشكل", price: 8, cat: "shorba" },
-            "sand1": { name: "كباب لحم", price: 14, cat: "sandwiches" },
-            "sand2": { name: "أوصال دجاج", price: 14, cat: "sandwiches" },
-            "sand3": { name: "كباب دجاج", price: 14, cat: "sandwiches" },
-            "sand4": { name: "طرب", price: 14, cat: "sandwiches" },
-            "sand5": { name: "كبده إسكندراني", price: 14, cat: "sandwiches" },
-            "sand6": { name: "أوصال لحم", price: 17, cat: "sandwiches" },
-            "sand7": { name: "عرائس حواوشي", price: 15, cat: "sandwiches" },
-            "ar1": { name: "أرز مصري", price: 8, cat: "aroz-makaronat" },
-            "ar2": { name: "أرز الألفي", price: 7, cat: "aroz-makaronat" },
-            "ar3": { name: "طاجن مكرونة باللحم", price: 14, cat: "aroz-makaronat" },
-            "ar4": { name: "مكرونة بشاميل باللحم", price: 16, cat: "aroz-makaronat" },
-            "ar5": { name: "مكرونة فوتتشيني", price: 23, cat: "aroz-makaronat" },
-            "ar6": { name: "مكرونة إسباجتى", price: 23, cat: "aroz-makaronat" },
-            "y1": { name: "كوارع", price: 37, cat: "yom-joma" },
-            "y2": { name: "ممبار", price: 25, cat: "yom-joma" },
-            "mq1": { name: "بطاطس", price: 8, cat: "moqabilat" },
-            "mq2": { name: "سلطة فتوش", price: 9, cat: "moqabilat" },
-            "mq3": { name: "خيار باللبن", price: 9, cat: "moqabilat" },
-            "mq4": { name: "سلطة تبولة", price: 9, cat: "moqabilat" },
-            "mq5": { name: "حمص", price: 9, cat: "moqabilat" },
-            "mq6": { name: "متبل", price: 8, cat: "moqabilat" },
-            "mq7": { name: "متبل / حمص", price: 9, cat: "moqabilat" },
-            "mq8": { name: "سلطة مشكل صغير", price: 8, cat: "moqabilat" },
-            "mq9": { name: "سلطة مشكل كبير", price: 16, cat: "moqabilat" },
-            "as1": { name: "كوكتيل", price: 8, cat: "asayer" },
-            "as2": { name: "ليمون نعناع", price: 8, cat: "asayer" },
-            "as3": { name: "ليمون", price: 8, cat: "asayer" },
-            "as4": { name: "برتقال", price: 10, cat: "asayer" },
-            "as5": { name: "جالون كوكتيل صغير", price: 20, cat: "asayer" },
-            "as6": { name: "جالون كوكتيل كبير", price: 26, cat: "asayer" },
-            "h1": { name: "أرز باللبن", price: 8, cat: "halawat" },
-            "h2": { name: "أم علي", price: 8, cat: "halawat" }
-        };
-        const quantities = {};
-        for (const id in fullMenu) { quantities[id] = 0; }
-        
-        window.onload = function() {
-            for (const id in fullMenu) {
-                const item = fullMenu[id];
-                const container = document.getElementById(`items-${item.cat}`);
-                if (container) {
-                    const html = `
-                        <div class="bg-[#141210] p-4 rounded-2xl border border-white/5 flex items-center justify-between gap-4 hover:border-amber-500/20 transition">
-                            <div>
-                                <h4 class="font-bold text-white">${item.name}</h4>
-                                <p class="text-amber-500 font-bold text-lg">${item.price} ريال</p>
-                            </div>
-                            <div class="flex items-center gap-3 bg-[#0e0c0a] rounded-xl p-1">
-                                <button onclick="changeQty('${id}', -1)" class="w-8 h-8 text-xl font-bold text-gray-400 hover:text-white">-</button>
-                                <span id="qty-${id}" class="w-8 text-center font-bold text-amber-500">0</span>
-                                <button onclick="changeQty('${id}', 1)" class="w-8 h-8 text-xl font-bold text-gray-400 hover:text-white">+</button>
-                            </div>
-                        </div>
-                    `;
-                    container.insertAdjacentHTML('beforeend', html);
-                }
-            }
-        };
-        
-        function switchTab(catId) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(el => {
-                el.classList.remove('bg-amber-500', 'text-black', 'font-bold');
-                el.classList.add('bg-[#141210]', 'text-gray-400');
-            });
-            document.getElementById(`tab-${catId}`).classList.add('active');
-            const btn = document.getElementById(`btn-${catId}`);
-            btn.classList.add('bg-amber-500', 'text-black', 'font-bold');
-        }
-        
-        function changeQty(id, delta) {
-            quantities[id] = Math.max(0, quantities[id] + delta);
-            document.getElementById(`qty-${id}`).innerText = quantities[id];
-            updateCart();
-        }
-        
-        function updateCart() {
-            let totalItems = 0;
-            let totalPrice = 0;
-            let cartHTML = '';
-            
-            for (const id in quantities) {
-                if (quantities[id] > 0) {
-                    const item = fullMenu[id];
-                    const itemTotal = item.price * quantities[id];
-                    totalItems += quantities[id];
-                    totalPrice += itemTotal;
-                    cartHTML += `
-                        <div class="flex justify-between items-center text-xs">
-                            <span>${item.name} × ${quantities[id]}</span>
-                            <span class="text-amber-500 font-bold">${itemTotal} ريال</span>
-                        </div>
-                    `;
-                }
-            }
-            
-            const cartSummary = document.getElementById('cart-summary');
-            if (totalItems === 0) {
-                cartSummary.innerHTML = '<p class="text-center py-8 text-gray-500">اختر من القائمة لبدء حساب طلبك</p>';
-            } else {
-                cartSummary.innerHTML = cartHTML;
-            }
-            
-            document.getElementById('items-count').innerText = `${totalItems} أصناف`;
-            document.getElementById('total-price').innerText = `${totalPrice} ريال`;
-        }
-        
-        // تم إزالة دالة sendToWhatsApp القديمة
-    </script>
+    <header class="relative h-[60vh] flex items-center justify-center bg-cover bg-center" style="background-image: linear-gradient(rgba(14, 12, 10, 0.85), rgba(14, 12, 10, 0.95)), url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1200&auto=format&fit=crop');">
+        <div class="text-center px-4 max-w-3xl z-10">
+            <div class="inline-block p-2 bg-white/5 rounded-full backdrop-blur-sm mb-6 border border-amber-500/20">
+                <span class="text-amber-500 font-bold text-xl px-4 py-2 block">🔥 سرايا الألفي</span>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
+                أصل المشويات والأكلات <span class="text-amber-500">المصرية</span> في تبوك
+            </h1>
+            <p class="text-gray-400 text-lg mb-8">اختر وجبتك المفضلة، احسب حسابك الإجمالي، واطلب مباشرة عبر الواتساب الفوري.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#menu-section" class="bg-amber-500 hover:bg-amber-600 text-black font-bold px-8 py-4 rounded-xl transition duration-300 shadow-lg shadow-amber-500/20 text-center">
+                    ابدأ الطلب وحساب الفاتورة
+                </a>
+            </div>
+        </div>
+    </header>
+    <main id="menu-section" class="py-12 px-4 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+            
+            <div class="lg:col-span-2 space-y-6">
+                
+                <div class="flex gap-2 overflow-x-auto pb-3 sticky top-0 bg-[#0e0c0a] z-20 py-2 mask-linear">
+                    <button onclick="switchTab('mashwiyat')" id="btn-mashwiyat" class="tab-btn bg-amber-500 text-black font-bold px-4 py-2 rounded-xl whitespace-nowrap text-sm transition">المشويات</button>
+                    <button onclick="switchTab('mshakal-am')" id="btn-mshakal-am" class="tab-btn bg-[#141210] border border-white/5 hover:border-amber-500/30 text-gray-400 font-semibold px-4 py-2 rounded-xl whitespace-nowrap text-sm transition">مشكل عام</button>
+                    <button onclick="switchTab('mshakal-lahm')" id="btn-mshakal-lahm" class="tab-btn bg-[#141210] border border-white/5 hover:border-amber-500/30 text-gray-400 font-semibold px-4 py-2 rounded-xl whitespace-nowrap text-sm transition">مشكل لحوم</button>
+                    <button onclick="switchTab('mshakal-dajaj')" id="btn-mshakal-dajaj" class="tab-btn bg-[#141210] border border-white/5 hover:border-amber-500/30 text-gray-400 font-semibold px-4 py-2 rounded-xl whitespace-nowrap text-sm transition">مشكل دجاج</button>
+                    <button onclick="switchTab('atbaq-janebiya')" id="btn-atbaq-janebiya" class="tab-btn bg-[#141210] border border-white/5 hover:border-amber-500/30 text-gray-400 font-semibold px-4 py-2 rounded-xl whitespace-nowrap text-sm transition">أطباق جانبية</button>
+                    <button onclick="switchTab('tawajen')" id="btn-tawajen" class="tab-btn bg-[#141210] border border-white/5 hover:border-amber-500/30 text-gray-400 font-semibold px-4 py-2 rounded-xl whitespace-nowrap text-sm transition">الطواجن</button>
+                    <button onclick="switchTab('shorba')" id="btn-shorba" class="tab-btn bg-[#141210] border border-white/5 hover:border-amber-500/30 text-gray-400 font-semibold px-4 py-2 rounded-xl whitespace-nowrap text-sm transition">شوربة وإيدامات</button>
+                    <button onclick="switchTab('sandwiches')" id="btn-sandwiches" class="tab-btn bg-[#141210] border border-white/5 hover:border-amber-500/30 text-gray-400 font-semibold px-4 py-2 rounded-xl whitespace-nowrap text-sm transition">الساندوتشات</button>
+                    <button onclick="switchTab('aroz-makaronat')" id="btn-aroz-makaronat" class="tab-btn bg-[#141210] border border-white/5 hover:border-amber-500/30 text-gray-400 font-semibold px-4 py-2 rounded-xl whitespace-nowrap text-sm transition">أرز ومكرونات</button>
+                    <button onclick="switchTab('moqabilat')" id="btn-moqabilat" class="tab-btn bg-[#141210] border border-white/5 hover:border-amber-500/30 text-gray-400 font-semibold px-4 py-2 rounded-xl whitespace-nowrap text-sm transition">المقبلات</button>
+                    <button onclick="switchTab('yom-joma')" id="btn-yom-joma" class="tab-btn bg-[#141210] border border-white/5 hover:border-amber-500/30 text-gray-400 font-semibold px-4 py-2 rounded-xl whitespace-nowrap text-sm transition">يوم الجمعة</button>
+                    <button onclick="switchTab('asayer')" id="btn-asayer" class="tab-btn bg-[#141210] border border-white/5 hover:border-amber-500/30 text-gray-400 font-semibold px-4 py-2 rounded-xl whitespace-nowrap text-sm transition">العصائر</button>
+                    <button onclick="switchTab('halawat')" id="btn-halawat" class="tab-btn bg-[#141210] border border-white/5 hover:border-amber-500/30 text-gray-400 font-semibold px-4 py-2 rounded-xl whitespace-nowrap text-sm transition">الحلا</button>
+                </div>
+                <!-- الأقسام -->
+                <div id="tab-mashwiyat" class="tab-content active space-y-3">
+                    <h3 class="text-xl font-bold text-amber-500 mb-4 flex items-center gap-2">🍢 المشويات على الفحم</h3>
+                    <div id="items-mashwiyat" class="space-y-3"></div>
+                </div>
+                <div id="tab-mshakal-am" class="tab-content space-y-3">
+                    <h3 class="text-xl font-bold text-amber-500 mb-4">🍽️ مشكل عام</h3>
+                    <div id="items-mshakal-am" class="space-y-3"></div>
+                </div>
+                <div id="tab-mshakal-lahm" class="tab-content space-y-3">
+                    <h3 class="text-xl font-bold text-amber-500 mb-4">🥩 مشكل لحوم</h3>
+                    <div id="items-mshakal-lahm" class="space-y-3"></div>
+                </div>
+                <div id="tab-mshakal-dajaj" class="tab-content space-y-3">
+                    <h3 class="text-xl font-bold text-amber-500 mb-4">🍗 مشكل دجاج</h3>
+                    <div id="items-mshakal-dajaj" class="space-y-3"></div>
+                </div>
+                <div id="tab-atbaq-janebiya" class="tab-content space-y-3">
+                    <h3 class="text-xl font-bold text-amber-500 mb-4">🥘 أطباق جانبية</h3>
+                    <div id="items-atbaq-janebiya" class="space-y-3"></div>
+                </div>
+                <div id="tab-tawajen" class="tab-content space-y-3">
+                    <h3 class="text-xl font-bold text-amber-500 mb-4">🏺 الطواجن</h3>
+                    <div id="items-tawajen" class="space-y-3"></div>
+                </div>
+                <div id="tab-shorba" class="tab-content space-y-3">
+                    <h3 class="text-xl font-bold text-amber-500 mb-4">🥣 شوربة وإيدامات</h3>
+                    <div id="items-shorba" class="space-y-3"></div>
+                </div>
+                <div id="tab-sandwiches" class="tab-content space-y-3">
+                    <h3 class="text-xl font-bold text-amber-500 mb-4">🥪 الساندوتشات</h3>
+                    <div id="items-sandwiches" class="space-y-3"></div>
+                </div>
+                <div id="tab-aroz-makaronat" class="tab-content space-y-3">
+                    <h3 class="text-xl font-bold text-amber-500 mb-4">🍚 أرز ومكرونات</h3>
+                    <div id="items-aroz-makaronat" class="space-y-3"></div>
+                </div>
+                <div id="tab-moqabilat" class="tab-content space-y-3">
+                    <h3 class="text-xl font-bold text-amber-500 mb-4">🥗 المقبلات</h3>
+                    <div id="items-moqabilat" class="space-y-3"></div>
+                </div>
+                <div id="tab-yom-joma" class="tab-content space-y-3">
+                    <h3 class="text-xl font-bold text-amber-500 mb-4">📅 يوم الجمعة فقط</h3>
+                    <div id="items-yom-joma" class="space-y-3"></div>
+                </div>
+                <div id="tab-asayer" class="tab-content space-y-3">
+                    <h3 class="text-xl font-bold text-amber-500 mb-4">🥤 العصائر</h3>
+                    <div id="items-asayer" class="space-y-3"></div>
+                </div>
+                <div id="tab-halawat" class="tab-content space-y-3">
+                    <h3 class="text-xl font-bold text-amber-500 mb-4">🍮 الحلا</h3>
+                    <div id="items-halawat" class="space-y-3"></div>
+                </div>
+            </div>
+            <!-- السلة الجانبية -->
+            <div class="bg-gradient-to-b from-[#1a1714] to-[#141210] p-6 rounded-3xl border border-amber-500/20 sticky top-20 shadow-2xl z-10">
+                <h3 class="text-xl font-bold text-white mb-4 pb-3 border-b border-white/5 flex items-center justify-between">
+                    <span>🛒 تفاصيل طلبك الحالي</span>
+                    <span id="items-count" class="bg-amber-500/10 text-amber-500 text-xs px-2.5 py-1 rounded-full border border-amber-500/20">0 أصناف</span>
+                </h3>
+                
+                <div id="cart-summary" class="max-h-[300px] overflow-y-auto text-gray-400 text-sm space-y-3 mb-6 pr-1">
+                    <p class="text-center py-8 text-gray-500">اختر من القائمة لبدء حساب طلبك</p>
+                </div>
+                <div class="pt-4 border-t border-white/5 mb-6 flex justify-between items-center">
+                    <span class="text-gray-400 font-semibold">الحساب الإجمالي:</span>
+                    <span id="total-price" class="text-2xl font-extrabold text-amber-500">0 ريال</span>
+                </div>
+                <a href="https://sarayaalalfi0.github.io/Saraya-Al-Alfi/" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 rounded-xl transition duration-300 flex items-center justify-center gap-2 text-md shadow-lg shadow-emerald-600/20">
+                    🚚 اطلب توصيل من المطعم ➡️
+                </a>
+            </div>
+        </div>
+    </main>
+    <footer class="py-10 bg-[#0a0807] text-center text-gray-500 text-sm border-t border-white/5 mt-16">
+        <p class="mb-2 font-semibold text-gray-400">مطعم مشويات وأكلات مصرية سرايا الألفي - تبوك</p>
+        <p class="mb-4 text-xs">رقم الطلبات المباشر: 0567441919</p>
+        <p>&copy; 2026 جميع الحقوق محفوظة لـ سرايا الألفي.</p>
+    </footer>
+    <script>
+        const fullMenu = {
+            "m1": { name: "ربع كباب لحم", price: 32, cat: "mashwiyat" },
+            "m2": { name: "ربع طرب", price: 34, cat: "mashwiyat" },
+            "m3": { name: "ربع أوصال لحم", price: 38, cat: "mashwiyat" },
+            "m4": { name: "ربع ريش ضاني", price: 60, cat: "mashwiyat" },
+            "m5": { name: "كبده ضاني", price: 28, cat: "mashwiyat" },
+            "m6": { name: "سمان", price: 25, cat: "mashwiyat" },
+            "m7": { name: "شيش طاووق", price: 26, cat: "mashwiyat" },
+            "m8": { name: "ربع أوصال دجاج", price: 26, cat: "mashwiyat" },
+            "m9": { name: "كباب دجاج", price: 26, cat: "mashwiyat" },
+            "m10": { name: "دجاج على الفحم", price: 28, cat: "mashwiyat" },
+            "m11": { name: "نص دجاجة على الفحم", price: 14, cat: "mashwiyat" },
+            "m12": { name: "ربع كيلو سجق مشوي", price: 31, cat: "mashwiyat" },
+            "g1": { name: "مشكل عادي", price: 29, cat: "mshakal-am" },
+            "g2": { name: "مشكل خاص", price: 48, cat: "mshakal-am" },
+            "g3": { name: "مشكل وسط", price: 94, cat: "mshakal-am" },
+            "g4": { name: "كيلو مشكل", price: 131, cat: "mshakal-am" },
+            "g5": { name: "مشكل كبير", price: 157, cat: "mshakal-am" },
+            "g6": { name: "مشكل ملكي", price: 158, cat: "mshakal-am" },
+            "g7": { name: "مشكل عائلي", price: 230, cat: "mshakal-am" },
+            "l1": { name: "مشكل عادي", price: 35, cat: "mshakal-lahm" },
+            "l2": { name: "مشكل خاص", price: 52, cat: "mshakal-lahm" },
+            "l3": { name: "مشكل وسط", price: 111, cat: "mshakal-lahm" },
+            "l4": { name: "كيلو مشكل", price: 144, cat: "mshakal-lahm" },
+            "l5": { name: "مشكل كبير", price: 168, cat: "mshakal-lahm" },
+            "l6": { name: "مشكل ملكي", price: 168, cat: "mshakal-lahm" },
+            "l7": { name: "مشكل عائلي", price: 260, cat: "mshakal-lahm" },
+            "d1": { name: "مشكل عادي", price: 26, cat: "mshakal-dajaj" },
+            "d2": { name: "مشكل خاص", price: 39, cat: "mshakal-dajaj" },
+            "d3": { name: "مشكل وسط", price: 78, cat: "mshakal-dajaj" },
+            "d4": { name: "كيلو مشكل", price: 104, cat: "mshakal-dajaj" },
+            "d5": { name: "مشكل كبير", price: 130, cat: "mshakal-dajaj" },
+            "d6": { name: "مشكل ملكي", price: 132, cat: "mshakal-dajaj" },
+            "d7": { name: "مشكل عائلي", price: 201, cat: "mshakal-dajaj" },
+            "j1": { name: "حبة حمام محشى", price: 41, cat: "atbaq-janebiya" },
+            "j2": { name: "ربع بط", price: 29, cat: "atbaq-janebiya" },
+            "j3": { name: "موزة (فتة)", price: 50, cat: "atbaq-janebiya" },
+            "j4": { name: "ورقة لحمة", price: 31, cat: "atbaq-janebiya" },
+            "j5": { name: "سجق اسكندراني", price: 31, cat: "atbaq-janebiya" },
+            "j6": { name: "كبدة اسكندراني", price: 28, cat: "atbaq-janebiya" },
+            "j7": { name: "محشي مشكل", price: 28, cat: "atbaq-janebiya" },
+            "j8": { name: "محشي مشكل صغير", price: 14, cat: "atbaq-janebiya" },
+            "t1": { name: "طاجن خضار باللحم (ضانى)", price: 29, cat: "tawajen" },
+            "t2": { name: "طاجن باميه باللحم (ضانى)", price: 29, cat: "tawajen" },
+            "t3": { name: "طاجن بطاطس بالدجاج", price: 26, cat: "tawajen" },
+            "t4": { name: "طاجن بطاطس باللحم", price: 29, cat: "tawajen" },
+            "t5": { name: "طاجن بصل باللحم", price: 31, cat: "tawajen" },
+            "t6": { name: "طاجن باميه باللحم (بتلو)", price: 31, cat: "tawajen" },
+            "t7": { name: "طاجن خضار باللحم (بتلو)", price: 31, cat: "tawajen" },
+            "t8": { name: "طاجن عكاوي", price: 37, cat: "tawajen" },
+            "t9": { name: "طاجن مسقعه باللحم", price: 14, cat: "tawajen" },
+            "s1": { name: "شوربة لسان عصفور", price: 8, cat: "shorba" },
+            "s2": { name: "شوربة حمام", price: 8, cat: "shorba" },
+            "s3": { name: "شوربة كريمة دجاج", price: 12, cat: "shorba" },
+            "s4": { name: "ملوخية", price: 9, cat: "shorba" },
+            "s5": { name: "بامية", price: 8, cat: "shorba" },
+            "s6": { name: "مسقعة", price: 9, cat: "shorba" },
+            "s7": { name: "خضار مشكل", price: 8, cat: "shorba" },
+            "sand1": { name: "كباب لحم", price: 14, cat: "sandwiches" },
+            "sand2": { name: "أوصال دجاج", price: 14, cat: "sandwiches" },
+            "sand3": { name: "كباب دجاج", price: 14, cat: "sandwiches" },
+            "sand4": { name: "طرب", price: 14, cat: "sandwiches" },
+            "sand5": { name: "كبده إسكندراني", price: 14, cat: "sandwiches" },
+            "sand6": { name: "أوصال لحم", price: 17, cat: "sandwiches" },
+            "sand7": { name: "عرائس حواوشي", price: 15, cat: "sandwiches" },
+            "ar1": { name: "أرز مصري", price: 8, cat: "aroz-makaronat" },
+            "ar2": { name: "أرز الألفي", price: 7, cat: "aroz-makaronat" },
+            "ar3": { name: "طاجن مكرونة باللحم", price: 14, cat: "aroz-makaronat" },
+            "ar4": { name: "مكرونة بشاميل باللحم", price: 16, cat: "aroz-makaronat" },
+            "ar5": { name: "مكرونة فوتتشيني", price: 23, cat: "aroz-makaronat" },
+            "ar6": { name: "مكرونة إسباجتى", price: 23, cat: "aroz-makaronat" },
+            "y1": { name: "كوارع", price: 37, cat: "yom-joma" },
+            "y2": { name: "ممبار", price: 25, cat: "yom-joma" },
+            "mq1": { name: "بطاطس", price: 8, cat: "moqabilat" },
+            "mq2": { name: "سلطة فتوش", price: 9, cat: "moqabilat" },
+            "mq3": { name: "خيار باللبن", price: 9, cat: "moqabilat" },
+            "mq4": { name: "سلطة تبولة", price: 9, cat: "moqabilat" },
+            "mq5": { name: "حمص", price: 9, cat: "moqabilat" },
+            "mq6": { name: "متبل", price: 8, cat: "moqabilat" },
+            "mq7": { name: "متبل / حمص", price: 9, cat: "moqabilat" },
+            "mq8": { name: "سلطة مشكل صغير", price: 8, cat: "moqabilat" },
+            "mq9": { name: "سلطة مشكل كبير", price: 16, cat: "moqabilat" },
+            "as1": { name: "كوكتيل", price: 8, cat: "asayer" },
+            "as2": { name: "ليمون نعناع", price: 8, cat: "asayer" },
+            "as3": { name: "ليمون", price: 8, cat: "asayer" },
+            "as4": { name: "برتقال", price: 10, cat: "asayer" },
+            "as5": { name: "جالون كوكتيل صغير", price: 20, cat: "asayer" },
+            "as6": { name: "جالون كوكتيل كبير", price: 26, cat: "asayer" },
+            "h1": { name: "أرز باللبن", price: 8, cat: "halawat" },
+            "h2": { name: "أم علي", price: 8, cat: "halawat" }
+        };
+        const quantities = {};
+        for (const id in fullMenu) { quantities[id] = 0; }
+        
+        window.onload = function() {
+            for (const id in fullMenu) {
+                const item = fullMenu[id];
+                const container = document.getElementById(`items-${item.cat}`);
+                if (container) {
+                    let imageHtml = '';
+                    if (id === 'j1') {
+                        imageHtml = '<img src="stuffed-pigeon.jpg" alt="حمام محشي" class="w-16 h-16 rounded-xl object-cover border border-amber-500/30 shadow-md">';
+                    }
+                    const html = `
+                        <div class="bg-[#141210] p-4 rounded-2xl border border-white/5 flex items-center justify-between gap-4 hover:border-amber-500/20 transition">
+                            <div class="flex items-center gap-4">
+                                ${imageHtml}
+                                <div>
+                                    <h4 class="font-bold text-white">${item.name}</h4>
+                                    <p class="text-amber-500 font-bold text-lg">${item.price} ريال</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 bg-[#0e0c0a] rounded-xl p-1">
+                                <button onclick="changeQty('${id}', -1)" class="w-8 h-8 text-xl font-bold text-gray-400 hover:text-white">-</button>
+                                <span id="qty-${id}" class="w-8 text-center font-bold text-amber-500">0</span>
+                                <button onclick="changeQty('${id}', 1)" class="w-8 h-8 text-xl font-bold text-gray-400 hover:text-white">+</button>
+                            </div>
+                        </div>
+                    `;
+                    container.insertAdjacentHTML('beforeend', html);
+                }
+            }
+        };
+        
+        function switchTab(catId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => {
+                el.classList.remove('bg-amber-500', 'text-black', 'font-bold');
+                el.classList.add('bg-[#141210]', 'text-gray-400');
+            });
+            document.getElementById(`tab-${catId}`).classList.add('active');
+            const btn = document.getElementById(`btn-${catId}`);
+            btn.classList.add('bg-amber-500', 'text-black', 'font-bold');
+        }
+        
+        function changeQty(id, delta) {
+            quantities[id] = Math.max(0, quantities[id] + delta);
+            document.getElementById(`qty-${id}`).innerText = quantities[id];
+            updateCart();
+        }
+        
+        function updateCart() {
+            let totalItems = 0;
+            let totalPrice = 0;
+            let cartHTML = '';
+            
+            for (const id in quantities) {
+                if (quantities[id] > 0) {
+                    const item = fullMenu[id];
+                    const itemTotal = item.price * quantities[id];
+                    totalItems += quantities[id];
+                    totalPrice += itemTotal;
+                    cartHTML += `
+                        <div class="flex justify-between items-center text-xs">
+                            <span>${item.name} × ${quantities[id]}</span>
+                            <span class="text-amber-500 font-bold">${itemTotal} ريال</span>
+                        </div>
+                    `;
+                }
+            }
+            
+            const cartSummary = document.getElementById('cart-summary');
+            if (totalItems === 0) {
+                cartSummary.innerHTML = '<p class="text-center py-8 text-gray-500">اختر من القائمة لبدء حساب طلبك</p>';
+            } else {
+                cartSummary.innerHTML = cartHTML;
+            }
+            
+            document.getElementById('items-count').innerText = `${totalItems} أصناف`;
+            document.getElementById('total-price').innerText = `${totalPrice} ريال`;
+        }
+    </script>
 </body>
 </html>
